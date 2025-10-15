@@ -36,7 +36,7 @@
     <main class="main-content-sidebar">
         <div class="page-header">
             <h1>Gestión de Campañas Publicitarias</h1>
-            <button class="btn btn-primary" onclick="showAlert('Funcionalidad: Nueva Campaña')">+ Nueva Campaña</button>
+            <button class="btn btn-primary" onclick="openCampaignModal()">+ Nueva Campaña</button>
         </div>
 
         <div class="campaign-stats">
@@ -205,6 +205,104 @@
             <button class="btn btn-secondary">Siguiente →</button>
         </div>
     </main>
+
+    <!-- Modal para crear nueva campaña -->
+    <div id="campaignModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nueva Campaña Publicitaria</h2>
+                <button class="modal-close" onclick="closeCampaignModal()">&times;</button>
+            </div>
+            <form id="campaignForm" class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="campaignName">Nombre de la Campaña*</label>
+                        <input type="text" id="campaignName" name="campaignName" required 
+                               placeholder="Ej: Campaña Navideña AutoMax">
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignClient">Cliente*</label>
+                        <select id="campaignClient" name="campaignClient" required>
+                            <option value="">Seleccionar cliente...</option>
+                            <option value="AutoMax">AutoMax</option>
+                            <option value="El Buen Sabor">El Buen Sabor</option>
+                            <option value="TechStore">TechStore</option>
+                            <option value="Clínica San Rafael">Clínica San Rafael</option>
+                            <option value="Universidad del Futuro">Universidad del Futuro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="campaignType">Tipo de Medio*</label>
+                        <select id="campaignType" name="campaignType" required>
+                            <option value="">Seleccionar tipo...</option>
+                            <option value="Radio">Radio</option>
+                            <option value="TV">Televisión</option>
+                            <option value="Digital">Digital</option>
+                            <option value="Prensa">Prensa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignStatus">Estado Inicial</label>
+                        <select id="campaignStatus" name="campaignStatus">
+                            <option value="Planificación">Planificación</option>
+                            <option value="Activa">Activa</option>
+                            <option value="Pausada">Pausada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="campaignStartDate">Fecha de Inicio*</label>
+                        <input type="date" id="campaignStartDate" name="campaignStartDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignEndDate">Fecha de Fin*</label>
+                        <input type="date" id="campaignEndDate" name="campaignEndDate" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="campaignBudget">Presupuesto ($)</label>
+                        <input type="number" id="campaignBudget" name="campaignBudget" 
+                               placeholder="0.00" step="0.01" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="campaignObjective">Objetivo Principal</label>
+                        <select id="campaignObjective" name="campaignObjective">
+                            <option value="">Seleccionar objetivo...</option>
+                            <option value="Branding">Branding/Reconocimiento</option>
+                            <option value="Ventas">Incremento de Ventas</option>
+                            <option value="Lanzamiento">Lanzamiento de Producto</option>
+                            <option value="Fidelización">Fidelización</option>
+                            <option value="Alcance">Alcance Masivo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="campaignDescription">Descripción</label>
+                    <textarea id="campaignDescription" name="campaignDescription" rows="3"
+                              placeholder="Describe los objetivos y características de la campaña..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="campaignTargetAudience">Audiencia Objetivo</label>
+                    <textarea id="campaignTargetAudience" name="campaignTargetAudience" rows="2"
+                              placeholder="Ej: Hombres y mujeres 25-45 años, clase media, interesados en tecnología..."></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeCampaignModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Crear Campaña</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
