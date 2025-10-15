@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campañas - Dar Publicidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sidebar-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="logofondonegro.webp" alt="Dar Publicidad" class="sidebar-logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="campanas.html" class="active"><i>📊</i> Campañas</a></li>
+                <li><a href="clientes.html"><i>👥</i> Clientes</a></li>
+                <li><a href="usuarios.html"><i>👤</i> Usuarios</a></li>
+                <li><a href="reportes.html"><i>📈</i> Reportes</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <h4>Administrador</h4>
+                    <small>admin.agencia.dar@gmail.com</small>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="main-content-sidebar">
+        <div class="page-header">
+            <h1>Gestión de Campañas Publicitarias</h1>
+            <button class="btn btn-primary" onclick="showAlert('Funcionalidad: Nueva Campaña')">+ Nueva Campaña</button>
+        </div>
+
+        <div class="campaign-stats">
+            <div class="stat-card">
+                <div class="stat-icon">📻</div>
+                <div class="stat-content">
+                    <h3>Radio</h3>
+                    <p class="stat-number">12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📺</div>
+                <div class="stat-content">
+                    <h3>Televisión</h3>
+                    <p class="stat-number">8</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🌐</div>
+                <div class="stat-content">
+                    <h3>Digital</h3>
+                    <p class="stat-number">15</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📰</div>
+                <div class="stat-content">
+                    <h3>Prensa</h3>
+                    <p class="stat-number">6</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar campañas por nombre o cliente..." id="searchCampaigns">
+            </div>
+            <div class="filter-options">
+                <select>
+                    <option>Todos los medios</option>
+                    <option>Radio</option>
+                    <option>Televisión</option>
+                    <option>Digital</option>
+                    <option>Prensa</option>
+                </select>
+                <select>
+                    <option>Todos los estados</option>
+                    <option>En Producción</option>
+                    <option>En Emisión</option>
+                    <option>Finalizada</option>
+                    <option>Cancelada</option>
+                    <option>Pausada</option>
+                </select>
+                <select>
+                    <option>Todos los productores</option>
+                    <option>María Elena García</option>
+                    <option>Roberto Silva</option>
+                    <option>Ana Patricia López</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Campaña</th>
+                        <th>Cliente</th>
+                        <th>Medio</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Productor</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CP001</td>
+                        <td>Promoción AutoMax 2025</td>
+                        <td>AutoMax Concesionario</td>
+                        <td><span class="badge badge-radio">📻 Radio</span></td>
+                        <td>15/10/2025</td>
+                        <td>30/11/2025</td>
+                        <td>María Elena García</td>
+                        <td><span class="status status-production">En Producción</span></td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver detalles de campaña AutoMax')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar campaña AutoMax')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Adjuntar archivos')" title="Archivos">📎</button>
+                            <button class="btn-icon" onclick="showAlert('Generar reporte')" title="Reporte">📊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CP002</td>
+                        <td>Menú Especial Navidad</td>
+                        <td>Restaurante El Buen Sabor</td>
+                        <td><span class="badge badge-tv">📺 TV</span></td>
+                        <td>20/11/2025</td>
+                        <td>31/12/2025</td>
+                        <td>Roberto Silva</td>
+                        <td><span class="status status-onair">En Emisión</span></td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver detalles El Buen Sabor')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar El Buen Sabor')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Adjuntar archivos')" title="Archivos">📎</button>
+                            <button class="btn-icon" onclick="showAlert('Generar reporte')" title="Reporte">📊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CP003</td>
+                        <td>Lanzamiento TechStore Pro</td>
+                        <td>TechStore Solutions</td>
+                        <td><span class="badge badge-digital">🌐 Digital</span></td>
+                        <td>01/10/2025</td>
+                        <td>15/10/2025</td>
+                        <td>Ana Patricia López</td>
+                        <td><span class="status status-finished">Finalizada</span></td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver detalles TechStore')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar TechStore')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Adjuntar archivos')" title="Archivos">📎</button>
+                            <button class="btn-icon" onclick="showAlert('Generar reporte')" title="Reporte">📊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CP004</td>
+                        <td>Servicios Médicos 2025</td>
+                        <td>Clínica San Rafael</td>
+                        <td><span class="badge badge-press">📰 Prensa</span></td>
+                        <td>05/09/2025</td>
+                        <td>05/12/2025</td>
+                        <td>María Elena García</td>
+                        <td><span class="status status-paused">Pausada</span></td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver detalles Clínica')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Clínica')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Adjuntar archivos')" title="Archivos">📎</button>
+                            <button class="btn-icon" onclick="showAlert('Generar reporte')" title="Reporte">📊</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CP005</td>
+                        <td>Inscripciones 2026</td>
+                        <td>Universidad del Futuro</td>
+                        <td><span class="badge badge-radio">📻 Radio</span></td>
+                        <td>01/11/2025</td>
+                        <td>28/02/2026</td>
+                        <td>Roberto Silva</td>
+                        <td><span class="status status-production">En Producción</span></td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver detalles Universidad')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Universidad')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Adjuntar archivos')" title="Archivos">📎</button>
+                            <button class="btn-icon" onclick="showAlert('Generar reporte')" title="Reporte">📊</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button class="btn btn-secondary">← Anterior</button>
+            <span class="page-info">Página 1 de 4</span>
+            <button class="btn btn-secondary">Siguiente →</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

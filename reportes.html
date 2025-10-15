@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes - Dar Publicidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sidebar-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="logofondonegro.webp" alt="Dar Publicidad" class="sidebar-logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="campanas.html"><i>📊</i> Campañas</a></li>
+                <li><a href="clientes.html"><i>👥</i> Clientes</a></li>
+                <li><a href="usuarios.html"><i>👤</i> Usuarios</a></li>
+                <li><a href="reportes.html" class="active"><i>📈</i> Reportes</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <h4>Administrador</h4>
+                    <small>admin.agencia.dar@gmail.com</small>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </aside>
+    <main class="main-content-sidebar">
+
+        <div class="export-section">
+            <h2>Exportar Reporte</h2>
+            <div class="export-options">
+                <div class="export-format">
+                    <label>
+                        <input type="radio" name="format" value="pdf" checked>
+                        <span class="format-icon">📄</span>
+                        PDF
+                    </label>
+                </div>
+                <div class="export-format">
+                    <label>
+                        <input type="radio" name="format" value="excel">
+                        <span class="format-icon">📊</span>
+                        Excel
+                    </label>
+                </div>
+                <div class="export-format">
+                    <label>
+                        <input type="radio" name="format" value="csv">
+                        <span class="format-icon">📋</span>
+                        CSV
+                    </label>
+                </div>
+            </div>
+            
+            <div class="export-button-container">
+                <button class="btn btn-primary export-btn" onclick="exportReport()">
+                    <span class="export-icon">📥</span>
+                    Exportar
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

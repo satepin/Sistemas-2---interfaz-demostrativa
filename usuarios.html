@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Dar Publicidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sidebar-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="logofondonegro.webp" alt="Dar Publicidad" class="sidebar-logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="campanas.html"><i>📊</i> Campañas</a></li>
+                <li><a href="clientes.html"><i>👥</i> Clientes</a></li>
+                <li><a href="usuarios.html" class="active"><i>👤</i> Usuarios</a></li>
+                <li><a href="reportes.html"><i>📈</i> Reportes</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <h4>Administrador</h4>
+                    <small>admin.agencia.dar@gmail.com</small>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="main-content-sidebar">
+        <div class="page-header">
+            <h1>Gestión de Usuarios del Sistema</h1>
+            <button class="btn btn-primary" onclick="showAlert('Funcionalidad: Nuevo Usuario')">+ Nuevo Usuario</button>
+        </div>
+
+        <div class="filters-section">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar usuarios..." id="searchUsers">
+            </div>
+            <div class="filter-options">
+                <select>
+                    <option>Todos los roles</option>
+                    <option>Administrador</option>
+                    <option>Productor Publicitario</option>
+                    <option>Vendedor</option>
+                    <option>Operador de Radio</option>
+                </select>
+                <select>
+                    <option>Todos los estados</option>
+                    <option>Activo</option>
+                    <option>Inactivo</option>
+                    <option>Suspendido</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Último Acceso</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>U001</td>
+                        <td>Juan Carlos Rodríguez</td>
+                        <td>juan.agencia.dar@gmail.com</td>
+                        <td><span class="badge badge-admin">Administrador</span></td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>15/10/2025 10:30</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de Juan Carlos')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Juan Carlos')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Eliminar Juan Carlos')" title="Eliminar">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U002</td>
+                        <td>María Elena García</td>
+                        <td>maria.agencia.dar@gmail.com</td>
+                        <td><span class="badge badge-producer">Productor Publicitario</span></td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>15/10/2025 09:45</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de María Elena')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar María Elena')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Eliminar María Elena')" title="Eliminar">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U003</td>
+                        <td>Carlos López Mendoza</td>
+                        <td>carlos.agencia.dar@gmail.com</td>
+                        <td><span class="badge badge-seller">Vendedor</span></td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>15/10/2025 08:20</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de Carlos López')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Carlos López')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Eliminar Carlos López')" title="Eliminar">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U004</td>
+                        <td>Ana Patricia Martínez</td>
+                        <td>ana.agencia.dar@gmail.com</td>
+                        <td><span class="badge badge-operator">Operador de Radio</span></td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>15/10/2025 07:15</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de Ana Patricia')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Ana Patricia')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Eliminar Ana Patricia')" title="Eliminar">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>U005</td>
+                        <td>Pedro Fernández Silva</td>
+                        <td>pedro.agencia.dar@gmail.com</td>
+                        <td><span class="badge badge-seller">Vendedor</span></td>
+                        <td><span class="status status-inactive">Inactivo</span></td>
+                        <td>13/10/2025 16:30</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de Pedro Fernández')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Pedro Fernández')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Eliminar Pedro Fernández')" title="Eliminar">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button class="btn btn-secondary">← Anterior</button>
+            <span class="page-info">Página 1 de 5</span>
+            <button class="btn btn-secondary">Siguiente →</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

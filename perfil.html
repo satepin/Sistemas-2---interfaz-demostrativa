@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Dar Publicidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sidebar-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="logofondonegro.webp" alt="Dar Publicidad" class="sidebar-logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="campanas.html"><i>📊</i> Campañas</a></li>
+                <li><a href="clientes.html"><i>👥</i> Clientes</a></li>
+                <li><a href="usuarios.html"><i>👤</i> Usuarios</a></li>
+                <li><a href="reportes.html"><i>📈</i> Reportes</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <h4>Administrador</h4>
+                    <small>admin.agencia.dar@gmail.com</small>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="main-content-sidebar">
+        <div class="page-header">
+            <h1>Mi Perfil</h1>
+            <p>Gestiona tu información personal y configuración de cuenta</p>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="profile-avatar">
+                    <div class="avatar-circle">
+                        <span class="avatar-initial">PP</span>
+                    </div>
+                    <button class="btn btn-secondary" onclick="showAlert('Cambiar foto de perfil')">Cambiar Foto</button>
+                </div>
+                <div class="profile-info">
+                    <h3>María Elena García</h3>
+                    <p class="profile-role">Productor Publicitario</p>
+                    <p class="profile-email">maria.agencia.dar@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h3>Información Personal</h3>
+                    <form class="profile-form">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="firstName">Nombre</label>
+                                <input type="text" id="firstName" value="María Elena" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Apellido</label>
+                                <input type="text" id="lastName" value="García" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="maria.agencia.dar@gmail.com" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" value="+54 11 4567-8900">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="department">Departamento</label>
+                            <select id="department">
+                                <option selected>Producción Publicitaria</option>
+                                <option>Ventas</option>
+                                <option>Administración</option>
+                                <option>Operaciones de Radio</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="showAlert('Información actualizada')">Guardar Cambios</button>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Cambiar Contraseña</h3>
+                    <form class="profile-form">
+                        <div class="input-group">
+                            <label for="currentPassword">Contraseña Actual</label>
+                            <input type="password" id="currentPassword" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="newPassword">Nueva Contraseña</label>
+                            <input type="password" id="newPassword" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="confirmPassword">Confirmar Nueva Contraseña</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" onclick="showAlert('Contraseña actualizada')">Cambiar Contraseña</button>
+                    </form>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Configuración de Notificaciones</h3>
+                    <div class="notification-settings">
+                        <div class="setting-item">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <div class="setting-info">
+                                <h4>Notificaciones por Email</h4>
+                                <p>Recibir notificaciones importantes por correo electrónico</p>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <div class="setting-info">
+                                <h4>Notificaciones del Sistema</h4>
+                                <p>Mostrar notificaciones en el navegador</p>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                            <div class="setting-info">
+                                <h4>Notificaciones de Marketing</h4>
+                                <p>Recibir información sobre nuevas funcionalidades</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

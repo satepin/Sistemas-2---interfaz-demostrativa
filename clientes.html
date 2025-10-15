@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Dar Publicidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="sidebar-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="logofondonegro.webp" alt="Dar Publicidad" class="sidebar-logo">
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="campanas.html"><i>📊</i> Campañas</a></li>
+                <li><a href="clientes.html" class="active"><i>👥</i> Clientes</a></li>
+                <li><a href="usuarios.html"><i>👤</i> Usuarios</a></li>
+                <li><a href="reportes.html"><i>📈</i> Reportes</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <h4>Administrador</h4>
+                    <small>admin.agencia.dar@gmail.com</small>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </aside>
+
+    <main class="main-content-sidebar">
+        <div class="page-header">
+            <h1>Gestión de Clientes</h1>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="showAlert('Funcionalidad: Nuevo Cliente')">+ Nuevo Cliente</button>
+                <button class="btn btn-secondary" onclick="showAlert('Ver Clientes Archivados')">📁 Archivados</button>
+            </div>
+        </div>
+
+        <div class="filters-section">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar clientes por nombre..." id="searchClients">
+            </div>
+            <div class="filter-options">
+                <select>
+                    <option>Todos los estados</option>
+                    <option>Activo</option>
+                    <option>Inactivo</option>
+                    <option>Potencial</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Razón Social / Nombre</th>
+                        <th>Rubro Comercial</th>
+                        <th>Contacto</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Estado</th>
+                        <th>Campañas</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>C001</td>
+                        <td>AutoMax Concesionario</td>
+                        <td><span class="badge badge-automotriz">Automotriz</span></td>
+                        <td>Roberto Martínez</td>
+                        <td>+54 11 4567-8901</td>
+                        <td>info@automax.com</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>3 campañas</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de AutoMax')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar AutoMax')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Nueva campaña para AutoMax')" title="Nueva Campaña">📻</button>
+                            <button class="btn-icon" onclick="showAlert('Archivar AutoMax')" title="Archivar">📁</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C002</td>
+                        <td>Restaurante El Buen Sabor</td>
+                        <td><span class="badge badge-restaurante">Gastronomía</span></td>
+                        <td>María Elena Rodríguez</td>
+                        <td>+54 11 2345-6789</td>
+                        <td>contacto@elbuensabor.com</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>1 campaña</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de El Buen Sabor')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar El Buen Sabor')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Nueva campaña para El Buen Sabor')" title="Nueva Campaña">📻</button>
+                            <button class="btn-icon" onclick="showAlert('Archivar El Buen Sabor')" title="Archivar">📁</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C003</td>
+                        <td>TechStore Solutions</td>
+                        <td><span class="badge badge-tecnologia">Tecnología</span></td>
+                        <td>Carlos Fernández</td>
+                        <td>+54 11 8765-4321</td>
+                        <td>ventas@techstore.com</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>5 campañas</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de TechStore')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar TechStore')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Nueva campaña para TechStore')" title="Nueva Campaña">📻</button>
+                            <button class="btn-icon" onclick="showAlert('Archivar TechStore')" title="Archivar">📁</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C004</td>
+                        <td>Clínica San Rafael</td>
+                        <td><span class="badge badge-salud">Salud</span></td>
+                        <td>Dr. Ana Patricia López</td>
+                        <td>+54 11 3456-7890</td>
+                        <td>admin@clinicasanrafael.com</td>
+                        <td><span class="status status-inactive">Inactivo</span></td>
+                        <td>2 campañas</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de Clínica San Rafael')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Clínica San Rafael')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Nueva campaña para Clínica San Rafael')" title="Nueva Campaña">📻</button>
+                            <button class="btn-icon" onclick="showAlert('Archivar Clínica San Rafael')" title="Archivar">📁</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>C005</td>
+                        <td>Universidad del Futuro</td>
+                        <td><span class="badge badge-educacion">Educación</span></td>
+                        <td>Lic. Pedro Sánchez</td>
+                        <td>+54 11 5678-9012</td>
+                        <td>marketing@unifuturo.edu</td>
+                        <td><span class="status status-potential">Potencial</span></td>
+                        <td>0 campañas</td>
+                        <td>
+                            <button class="btn-icon" onclick="showAlert('Ver perfil de Universidad del Futuro')" title="Ver">👁️</button>
+                            <button class="btn-icon" onclick="showAlert('Editar Universidad del Futuro')" title="Editar">✏️</button>
+                            <button class="btn-icon" onclick="showAlert('Nueva campaña para Universidad del Futuro')" title="Nueva Campaña">📻</button>
+                            <button class="btn-icon" onclick="showAlert('Archivar Universidad del Futuro')" title="Archivar">📁</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="pagination">
+            <button class="btn btn-secondary">← Anterior</button>
+            <span class="page-info">Página 1 de 3</span>
+            <button class="btn btn-secondary">Siguiente →</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
